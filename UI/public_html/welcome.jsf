@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:trh="http://myfaces.apache.org/trinidad/html" xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="welcome.jsf" id="d1" inlineStyle="height: auto;">
+        <af:messages id="m3"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/tabletFirstTemplate.jspx" id="pt1">
+                <f:facet name="header">
+                    <af:outputText value="Desktop" id="ot1" rendered="true">
+                        <af:matchMediaBehavior matchedPropertyValue="Mobile" mediaQuery="screen and (max-width: 768px)"
+                                               propertyName="value"/>
+                    </af:outputText>
+                </f:facet>
+                <f:facet name="status">
+                    <af:menuBar id="mb1">
+                        <af:menu text="User Name" id="m2">
+                            <af:commandMenuItem text="My Account" id="cmi1"
+                                                icon="/resources/images/naviBarFaces/navi_person_24_ena.png"/>
+                            <af:group id="g1">
+                                <af:commandMenuItem text="logout" selected="false" id="cmi2"/>
+                            </af:group>
+                        </af:menu>
+                    </af:menuBar>
+                </f:facet>
+                <f:facet name="appNav">
+                    <af:panelGroupLayout layout="horizontal" styleClass="wide" id="pgl1">
+                        <af:button text="Home" id="b1" styleClass="AFAppNavbarButton"
+                                   selected="#{viewScope.NavigationBean.taskFlowId == '/WEB-INF/welcome-TF.xml#welcome-TF'}"
+                                   type="radio" icon="/resources/images/naviBarFaces/navi_home_24_ena.png"
+                                   hoverIcon="/resources/images/naviBarFaces/navi_home_24_hov.png">
+                            <af:setPropertyListener from="/WEB-INF/welcome-TF.xml#welcome-TF"
+                                                    to="#{viewScope.NavigationBean.taskFlowId}" type="action"/>
+                        </af:button>
+                        <af:button text="Users" id="b2" styleClass="AFAppNavbarButton" type="radio"
+                                   selected="#{viewScope.NavigationBean.taskFlowId == '/WEB-INF/Users-TF#Users-TF'}"
+                                   icon="/resources/images/naviBarFaces/navi_people_24_ena.png"
+                                   hoverIcon="/resources/images/naviBarFaces/navi_people_24_hov.png">
+                            <af:setPropertyListener from="/WEB-INF/Users-TF#Users-TF"
+                                                    to="#{viewScope.NavigationBean.taskFlowId}" type="action"/>
+                        </af:button>
+                        <af:button text="Projects" id="b3" styleClass="AFAppNavbarButton" type="radio" disabled="true"
+                                   icon="/resources/images/naviBarFaces/navi_projects_24_ena.png"
+                                   hoverIcon="/resources/images/naviBarFaces/navi_projects_24_hov.png"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="horizontal" styleClass="narrow" id="pgl2">
+                        <af:menuBar id="mb2">
+                            <af:menu id="m1" icon="/resources/images/hamburguer38x38.png">
+                                <af:commandMenuItem text="Dashboard"
+                                                    icon="/resources/images/naviBarFaces/navi_dashboard_24_ena.png"
+                                                    id="cmi3"/>
+                                <af:commandMenuItem text="People"
+                                                    icon="/resources/images/naviBarFaces/navi_person_24_ena.png"
+                                                    id="cmi4"/>
+                            </af:menu>
+                        </af:menuBar>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="globalLinks"></f:facet>
+                <f:facet name="footer">
+                    <af:navigationPane hint="bar" id="np1">
+                        <af:commandNavigationItem id="ni1" text="About US"/>
+                        <af:commandNavigationItem id="ni2" text="Contact Us"/>
+                        <af:commandNavigationItem id="ni3" text="Legal Notices"/>
+                        <af:commandNavigationItem id="ni4" text="Terms of Use"/>
+                        <af:commandNavigationItem id="ni5" text="Your Privacy Rights"/>
+                    </af:navigationPane>
+                </f:facet>
+                <f:facet name="center">
+                    <af:spacer id="s1" height="20"/>
+                    <h:outputText value=" The use of responsive design" id="ot2" style="font-size:xx-large;"/>
+                    <af:spacer id="s3" height="30"/>
+                    <af:masonryLayout id="ml1">
+                        <af:panelBox text="Bloc width fix 230px" styleClass="AFMasonryTileSize1x1" id="pb2"
+                                     showDisclosure="false" inlineStyle="min-width: 230px; min-height: 230px;">
+                            <af:link id="l3" action="myaccount">
+                                <?audit suppress oracle.jdeveloper.jsp.validate-children?>
+                                <af:panelGroupLayout id="pgl4" halign="center" layout="vertical">
+                                    <af:image id="i2" source="/resources/images/organizations/70.png"
+                                              styleClass="WBPersonImage"/>
+                                </af:panelGroupLayout>
+                            </af:link>
+                        </af:panelBox>
+                        <af:panelBox text="Bloc width fix 230px" styleClass="AFMasonryTileSize1x1" id="pb5"
+                                     showDisclosure="false" inlineStyle="min-width: 230px; min-height: 230px;">
+                            <af:link id="l4" action="myaccount">
+                                <?audit suppress oracle.jdeveloper.jsp.validate-children?>
+                                <af:panelGroupLayout id="pgl5" halign="center" layout="vertical">
+                                    <af:image id="i3" source="/resources/images/organizations/30.png"
+                                              styleClass="WBPersonImage"/>
+                                </af:panelGroupLayout>
+                            </af:link>
+                        </af:panelBox>
+                        <af:panelBox text="Bloc 40% width" styleClass="AFMasonryTileSize2x1" id="pb1"
+                                     showDisclosure="false" inlineStyle="min-width: 40%; min-height: 230px;">
+                            <af:link id="l1" action="myaccount">
+                                <?audit suppress oracle.jdeveloper.jsp.validate-children?>
+                                <af:panelGroupLayout id="pgl10" halign="center" layout="vertical">
+                                    <af:image id="me" source="/resources/images/organizations/90.png"
+                                              styleClass="WBPersonImage"/>
+                                </af:panelGroupLayout>
+                            </af:link>
+                        </af:panelBox>
+                        <af:panelBox text="Bloc 40% width" styleClass="AFMasonryTileSize2x1" id="pb3"
+                                     showDisclosure="false" inlineStyle="min-width: 40%; min-height: 230px;">
+                            <af:link id="l2" action="myaccount">
+                                <?audit suppress oracle.jdeveloper.jsp.validate-children?>
+                                <af:panelGroupLayout id="pgl3" halign="center" layout="vertical">
+                                    <af:image id="i1" source="/resources/images/organizations/80.png"
+                                              styleClass="WBPersonImage"/>
+                                </af:panelGroupLayout>
+                            </af:link>
+                        </af:panelBox>
+                        <af:panelBox text="Bloc 100% width" styleClass="AFMasonryTileSize3x1" id="pb4"
+                                     showDisclosure="false" inlineStyle="min-width: 100%;"/>
+                    </af:masonryLayout>
+                    <h:outputText value=" The use of matchMediaBehaviour" id="ot3" style="font-size:xx-large;"/>
+                    <af:spacer id="s2" height="30"/>
+                    <af:panelSplitter id="ps1" orientation="horizontal" splitterPosition="200">
+                        <f:facet name="first">
+                            <af:panelBox text="Position 1" id="pb6">
+                                <f:facet name="toolbar"/>
+                            </af:panelBox>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelBox text="Position 2" id="pb7">
+                                <f:facet name="toolbar"/>
+                            </af:panelBox>
+                        </f:facet>
+                        <af:matchMediaBehavior matchedPropertyValue="vertical"
+                                               mediaQuery="screen and (max-width: 768px)" propertyName="orientation"/>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:attribute name="endWidth" value="0px"/>
+                <f:attribute name="startWidth" value="0px"/>
+                <f:attribute name="logoImagePath" value="/resources/images/oracle_small200.png"/>
+                <f:attribute name="logoSmallImagePath" value="/resources/images/oracle_small200.png"/>
+                <f:attribute name="showFooter" value="false"/>
+            </af:pageTemplate>
+        </af:form>
+        <f:facet name="metaContainer">
+            <trh:meta name="apple-mobile-web-app-capable" content="yes"/>
+            <trh:meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+            <af:resource type="javascript" source="resources/js/WBMediaQuery.js"/>
+            <af:resource type="javascript" source="resources/js/WBClientScript.js"/>
+        </f:facet>
+    </af:document>
+</f:view>
