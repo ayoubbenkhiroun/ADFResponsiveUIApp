@@ -116,15 +116,21 @@
                     </af:masonryLayout>
                     <h:outputText value=" The use of matchMediaBehaviour" id="ot3" style="font-size:xx-large;"/>
                     <af:spacer id="s2" height="30"/>
-                    <af:panelSplitter id="ps1" orientation="horizontal" splitterPosition="200">
+                    <af:panelSplitter id="ps1" orientation="horizontal" splitterPosition="300">
                         <f:facet name="first">
                             <af:panelBox text="Position 1" id="pb6">
                                 <f:facet name="toolbar"/>
+                                <af:inputText label="Input text 1" id="it1"/>
+                                <af:inputText label="Input text 2" id="it2"/>
+                                <af:inputText label="Input text 3" id="it3"/>
                             </af:panelBox>
                         </f:facet>
                         <f:facet name="second">
                             <af:panelBox text="Position 2" id="pb7">
                                 <f:facet name="toolbar"/>
+                                <af:inputText label="Input text 4" id="it4"/>
+                                <af:inputText label="Input text 5" id="it5"/>
+                                <af:inputDate label="Input date 1" id="id1"/>
                             </af:panelBox>
                         </f:facet>
                         <af:matchMediaBehavior matchedPropertyValue="vertical"
